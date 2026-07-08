@@ -1,0 +1,260 @@
+<!-- 
+  DEBUGGING & DEVELOPMENT TOOLS:
+  - Chrome DevTools was used extensively in initial stages to debug layout issues, responsive design problems,
+    and HTML/CSS structure validation
+  - AI Assistants (Claude Haiku 4.5 from Anthropic and Grok from xAI) were integrated as debugging tools
+    as the code became more complex, especially during JavaScript implementation
+  - AI provided advanced debugging for form validation, DOM manipulation, event handling, and cross-browser compatibility
+  - VS Code's IntelliSense and predictive tab completion were utilized for improved code efficiency
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Goals</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="career-goals-container">
+        <p class="tolkien-quote">"All those who wander are not lost" (Tolkien, 2001)</p>
+        
+        <header class="header-section">
+            <div class="header-box">
+                <h1>Shane Wright</h1>
+                <h2>Career Goals</h2>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- ========== MEDIA & CONTACT GRID ==========
+                 Left: Photo, Contact Info, Lyrics
+                 Right: Video with Controls & Audio
+                 ======================================= -->
+            <section class="photo-contact-details-section">
+            <div class="left-media-column">
+                <div class="photo-box career-photo-box">
+                    <img src="resume photo.jpg" id="careerphoto" alt="Career Goals Page Profile Photo">
+                </div>
+                <div class="contact-box">
+                    <h3>Contact Me</h3>
+                    <p>Email: <a href="mailto:wsrhiagnhet@gmail.com">wsrhiagnhet@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+17063923887">706-392-3887</a></p>
+                    <p>Location: Manchester, Georgia</p>
+                </div>
+                <div class="lyrics-box">
+                    <h4>Python Cowboy <span class="media-citation">(SUNO AI, 2025)</span></h4>
+                    <div class="lyrics-content">
+                        <p><strong>[Verse]</strong><br>
+                        Lines of code keep flashing on my screen<br>
+                        Black background glowing green<br>
+                        Errors biting at my heels<br>
+                        Fix 'em quick or the dream congeals</p>
+
+                        <p>Binary whispers<br>
+                        Secrets to tell<br>
+                        Loops and functions<br>
+                        Heaven or hell<br>
+                        Why's this work<br>
+                        Why's this break<br>
+                        Answers hide in the mess we make</p>
+
+                        <p><strong>[Prechorus]</strong><br>
+                        Typing fast<br>
+                        Mind's a blur<br>
+                        Debugging demons that always stir</p>
+
+                        <p><strong>[Chorus]</strong><br>
+                        Python cowboy riding through the night<br>
+                        Wrangling logic under neon light<br>
+                        Git commits and caffeine streams<br>
+                        Chasing shadows of my software dreams</p>
+
+                        <p><strong>[Verse 2]</strong><br>
+                        Indentations got me losing my mind<br>
+                        Tabs or spaces<br>
+                        Who's on my side<br>
+                        Stack Overflow my best friend<br>
+                        Copy paste<br>
+                        Then it's trial and amend</p>
+
+                        <p>While the banjo twangs<br>
+                        My patience fades<br>
+                        Violin wails like my error parade<br>
+                        Breakpoints hit<br>
+                        My heart's on edge<br>
+                        Each line of code feels like a pledge</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-media">
+                <p class="video-citation"><em>(Video created with Veo 3 and Gemini, 2025)</em></p>
+                <div class="video-box">
+                    <video id="careerVideo" muted loop class="career-video">
+                        <source src="musicvideo.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+                
+                <div class="video-controls">
+                    <button id="playPauseBtn" class="control-btn">Pause</button>
+                    <input type="range" id="videoSlider" class="video-slider" min="0" max="100" value="0" aria-label="Video progress slider">
+                    <span id="timeDisplay" class="time-display">0:00 / 0:00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== AUDIO PLAYER SECTION ==========
+             Full-width audio player with controls.
+             Goes along with video.
+             ======================================== -->
+        <section class="audio-box full-width">
+            <audio id="bgMusic" controls class="bg-music" autoplay loop>
+                <source src="Python Cowboy.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- ========== GOALS & CONTACT FORM SECTION ==========
+             Left: Contact form for inquiries
+             Right: Career goals and vision statement
+             ================================================ -->
+        <article class="main-section">
+            <div class="left-sidebar">
+                <form class="contact-form" action="https://wp.zybooks.com/form-viewer.php" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="companyName">Company Name:</label>
+                        <input type="text" id="companyName" name="companyName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">What's on your mind?</label>
+                        <textarea id="message" name="message" rows="3" placeholder="I'd love to hear from you..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <span>When works best for you?</span><br>
+                        <input type="radio" id="am" name="contactTime" value="AM">
+                        <label for="am">A.M.</label>
+                        <input type="radio" id="pm" name="contactTime" value="PM">
+                        <label for="pm">P.M.</label>
+                        <input type="radio" id="anytime" name="contactTime" value="Anytime">
+                        <label for="anytime">Anytime</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMethod">Best Form of Contact:</label>
+                        <select id="contactMethod" name="contactMethod">
+                            <option value="Phone">Phone</option>
+                            <option value="Email">Email</option>
+                            <option value="Text">Text</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+
+                <nav class="nav-box">
+                    <h3>Nav</h3>
+                    <button class="nav" onclick="window.location.href='index.html'">Resume</button>
+                    <button class="nav-secondary" onclick="window.location.href='CoverLetter.html'">Cover Letter</button>
+                </nav>
+            </div>
+
+            <div class="goals-content">
+                <h2>My Journey</h2>
+                <div class="goals-text">
+                    <h3>Next Steps (1-2 Years)</h3>
+                    <ul>
+                        <li>Strengthen my expertise in programming</li>
+                        <li>Master advanced programming technologies</li>
+                        <li>Start building a strong professional network</li>
+                        <li>Build portfolio by gaining certifications</li>
+                    </ul>
+
+                    <h3>Where I'm Headed (2-5 Years)</h3>
+                    <ul>
+                        <li>Finish degree</li>
+                        <li>Become an industry expert in my field</li>
+                        <li>Take on more strategic responsibilities, roles, and internships</li>
+                        <li>Begin a career in the field</li>
+                    </ul>
+
+                    <h3>My Vision (5+ Years)</h3>
+                    <ul>
+                        <li>Make a lasting impact in my career</li>
+                        <li>Mentor the next generation of professionals</li>
+                        <li>Achieve professional fulfillment and growth</li>
+                        <li>Continuously adapt and evolve with industry trends</li>
+                    </ul>
+
+                    <h3>Skills I'm Developing</h3>
+                    <ul>
+                        <li>Advanced tech proficiency</li>
+                        <li>Leadership and team management</li>
+                        <li>Strategic problem-solving</li>
+                        <li>Continuous learning and adaptation of new technologies</li>
+                        <li>Programming</li>
+                    </ul>
+
+                    <h3>My Action Plan</h3>
+                    <p>I'm committed to continuous growth through professional development courses, meaningful networking, and taking on new challenges that push my boundaries and expand my skill set.</p>
+                </div>
+            </div>
+        </article>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>References and Cites:</p>
+                <p>McCown, F. (2025). D 276: Web Development Foundations. Retrieved from <a href="https://learn.zybooks.com/zybook/WGUD276v3">https://learn.zybooks.com/zybook/WGUD276v3</a></p>
+                <p>Programming with Mosh. (2021). <em>HTML tutorial for beginners: HTML crash course</em> [Video]. YouTube. Retrieved from <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU">https://www.youtube.com/watch?v=qz0aGYrrlhU</a></p>
+                <p>Programming with Mosh. (2018). <em>JavaScript course for beginners – Your first step to web development</em> [Video]. YouTube. Retrieved from <a href="https://www.youtube.com/watch?v=W6NZfCO5SIk">https://www.youtube.com/watch?v=W6NZfCO5SIk</a></p>
+                <p>Tolkien, J. R. R. (2001). <em>The Fellowship of the Ring</em> "The Riddle of Strider."</p>
+                <p>Anthropic. (2025). Claude Haiku 4.5 [Large language model]. Retrieved from https://www.anthropic.com/</p>
+                <p>xAI. (2025). Grok [Large language model]. Retrieved from https://grok.x.ai/</p>
+                <p>Microsoft. (2025). Visual Studio Code IntelliSense [Software feature]. Retrieved from <a href="https://code.visualstudio.com/docs/editor/intellisense">https://code.visualstudio.com/docs/editor/intellisense</a></p>
+                <p>SUNO AI. (2025). SUNO: AI music generation [Artificial intelligence tool]. Retrieved from https://www.suno.ai/</p>
+                <p>Google DeepMind. (2025). Veo 3 [Video generation AI]. Retrieved from https://deepmind.google/technologies/veo/</p>
+                <p>Google. (2025). Gemini [Large language model]. Retrieved from https://gemini.google.com/</p>
+            </div>
+            <div class="footer-back-to-top">
+                <a href="#top">Back to top</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ========== DROPDOWN ADVERTISEMENT MODAL ==========
+         Displays promotional modal to "Hire me" after 2-second delay.
+         ============================================ -->
+    <div id="adModal" class="ad-modal">
+        <div class="ad-content">
+            <button id="closeAdBtn" class="ad-close-btn">&times;</button>
+            <h2>HIRE ME!!!</h2>
+            <p>Check out my portfolio and let's work together!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

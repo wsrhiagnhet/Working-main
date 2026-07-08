@@ -1,0 +1,146 @@
+<!-- 
+  DEBUGGING & DEVELOPMENT TOOLS:
+  - Chrome DevTools was used extensively in initial stages to debug layout issues, responsive design problems,
+    and HTML/CSS structure validation
+  - AI Assistants (Claude Haiku 4.5 from Anthropic and Grok from xAI) were integrated as debugging tools
+    as the code became more complex, especially during JavaScript implementation
+  - AI provided advanced debugging for form validation, DOM manipulation, event handling, and cross-browser compatibility
+  - VS Code's IntelliSense and predictive tab completion were utilized for improved code efficiency
+
+  FEATURES: The cover letter is dynamic, consisting of form inputs that populate the letter content when the
+  "Update Cover Letter" button is clicked along with a generic body that can be used multiple times for
+  different job applications.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cover-letter-container">
+        <p class="tolkien-quote">"All those who wander are not lost" (Tolkien, 2001)</p>
+        <header class="cover-header">
+            <div class="name-title-box">
+                <h1><strong>Shane Wright</strong></h1>
+                <h2><em><strong>Virtual Receptionist</strong></em></h2>
+            </div>
+            <div class="contact-details-cover">
+                <h3>Contact Details</h3>
+                <p>Email: <a href="mailto:wsrhiagnhet@gmail.com">wsrhiagnhet@gmail.com</a></p>
+                <p>Phone: <a href="tel:+17063923887">706-392-3887</a></p>
+                <p>Location: Manchester, Georgia</p>
+            </div>
+            <div class="cover-photo-box">
+                <img src="resume photo.jpg" id="coverphoto" alt="Cover Letter Page Profile Photo">
+            </div>
+        </header>
+
+        <!-- ========== FORM INPUT SECTION ==========
+             User fills in hiring manager info and job details.
+             Contains: Hiring Manager Details, Job Position, Navigation
+             ========================================== -->
+        <section class="info-section">
+            <div class="hiring-manager-box">
+                <h3>Hiring Manager Details</h3>
+                <hr>
+                <div class="form-group">
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" placeholder="Name of company applying for...">
+                </div>
+                <div class="form-group">
+                    <label for="manager-name">Hiring Manager Name:</label>
+                    <input type="text" id="manager-name" placeholder="Hiring manager's name...">
+                </div>
+                <div class="form-group">
+                    <label for="manager-email">Email:</label>
+                    <input type="email" id="manager-email" placeholder="Enter hiring manager email..." required>
+                </div>
+            </div>
+
+            <div class="subject-box">
+                <h3>Your Opportunity</h3>
+                <hr>
+                <div class="form-group">
+                    <label for="job-position">Job Position:</label>
+                    <input type="text" id="job-position" placeholder="Job position applying for...">
+                </div>
+                <div class="form-group">
+                    <label for="cover-letter-body">Letter Body:</label>
+                    <textarea id="cover-letter-body" placeholder="Tell them what makes you passionate about this opportunity..."></textarea>
+                </div>
+            </div>
+
+            <nav class="nav-cover-box">
+                <h3>Nav</h3>
+                <div class="nav-button-group">
+                    <button class="nav" onclick="window.location.href='index.html'">Resume</button>
+                    <button class="nav-secondary" onclick="window.location.href='CareerGoals.html'">Career Goals</button>
+                </div>
+            </nav>
+        </section>
+
+        <!-- ========== LETTER CONTENT SECTION ==========
+             Displays the generated cover letter with
+             dynamic content populated from form inputs.
+             ========================================== -->
+        <main class="main-cover">
+            <article class="body-section">
+                <div class="generic-body">
+                    <h2 id="cover-letter-title">Cover Letter</h2>
+                    <div class="letter-content">
+                        <p><mark>Dear <span class="dynamic-content">Hiring Manager</span>,</mark></p>
+                        <p><span class="indent-spacer"></span>I am excited to apply for the Cover Letter position at [Company Name]. With my extensive background in customer service and administrative support, I am confident in my ability to contribute effectively to your team.</p>
+                        <p>Throughout my career, I have developed expertise in customer service, communication, and administrative support. My experience has equipped me with the skills necessary to excel in this position and make a meaningful impact on your organization.</p>
+                        <p>I am particularly drawn to <span class="dynamic-content">[Company Name]</span> because of its reputation for excellence and innovation. I am excited about the opportunity to bring my unique skills and perspective to your team.</p>
+                        <p>Thank you for considering my application. I would welcome the opportunity to discuss how my qualifications align with your needs. Please feel free to contact me at <span class="dynamic-content">706-392-3887</span> or <span class="dynamic-content">wsrhiagnhet@gmail.com</span> at your convenience.</p>
+                        <p class="signature-text"><span class="indent-spacer"></span><mark>Sincerely,<br><br>Shane Wright</mark></p>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- ========== ACTION BUTTONS SECTION ========== -->
+        <div class="button-group">
+            <button class="submit" onclick="updateCoverLetter()">Update Cover Letter</button>
+            <button class="print" onclick="window.print()">Print Letter</button>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>References and Cites:</p>
+                <p>McCown, F. (2025). D 276: Web Development Foundations. Retrieved from <a href="https://learn.zybooks.com/zybook/WGUD276v3">https://learn.zybooks.com/zybook/WGUD276v3</a></p>
+                <p>Programming with Mosh. (2021). <em>HTML tutorial for beginners: HTML crash course</em> [Video]. YouTube. Retrieved from <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU">https://www.youtube.com/watch?v=qz0aGYrrlhU</a></p>
+                <p>Programming with Mosh. (2018). <em>JavaScript course for beginners – Your first step to web development</em> [Video]. YouTube. Retrieved from <a href="https://www.youtube.com/watch?v=W6NZfCO5SIk">https://www.youtube.com/watch?v=W6NZfCO5SIk</a></p>
+                <p>Tolkien, J. R. R. (2001). <em>The Fellowship of the Ring</em> "The Riddle of Strider."</p>
+                <p>Anthropic. (2025). Claude Haiku 4.5 [Large language model]. Retrieved from https://www.anthropic.com/</p>
+                <p>xAI. (2025). Grok [Large language model]. Retrieved from https://grok.x.ai/</p>
+                <p>Microsoft. (2025). Visual Studio Code IntelliSense [Software feature]. Retrieved from <a href="https://code.visualstudio.com/docs/editor/intellisense">https://code.visualstudio.com/docs/editor/intellisense</a></p>
+                <p>SUNO AI. (2025). SUNO: AI music generation [Artificial intelligence tool]. Retrieved from https://www.suno.ai/</p>
+                <p>Google DeepMind. (2025). Veo 3 [Video generation AI]. Retrieved from https://deepmind.google/technologies/veo/</p>
+                <p>Google. (2025). Gemini [Large language model]. Retrieved from https://gemini.google.com/</p>
+            </div>
+            <div class="footer-back-to-top">
+                <a href="#top">Back to top</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ========== DROPDOWN ADVERTISEMENT MODAL ==========
+         Displays promotional modal to "Hire me" after 2-second delay.
+         ============================================ -->
+    <div id="adModal" class="ad-modal">
+        <div class="ad-content">
+            <button id="closeAdBtn" class="ad-close-btn">&times;</button>
+            <h2>HIRE ME!!!</h2>
+            <p>Check out my portfolio and let's work together!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

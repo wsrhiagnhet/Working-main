@@ -1,0 +1,238 @@
+<!-- 
+  DEBUGGING & DEVELOPMENT TOOLS:
+  - Chrome DevTools was used extensively in initial stages to debug layout issues, responsive design problems,
+    and HTML/CSS structure validation
+  - AI Assistants (Claude Haiku 4.5 from Anthropic and Grok from xAI) were integrated as debugging tools
+    as the code became more complex, especially during JavaScript implementation
+  - AI provided advanced debugging for form validation, DOM manipulation, event handling, and cross-browser compatibility
+  - VS Code's IntelliSense and predictive tab completion were utilized for improved code efficiency
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="resume-container">
+        <p class="tolkien-quote">"All those who wander are not lost" (Tolkien, 2001)</p>
+        <header class="header">
+            <section class="contact-details-section">
+                <h3><strong>Contact Details</strong></h3>
+                <p>Email: <a href="mailto:wsrhiagnhet@gmail.com">wsrhiagnhet@gmail.com</a></p>
+                <p>Phone: <a href="tel:+17063923887">706-392-3887</a></p>
+                <p>Location: Manchester, Georgia</p>
+            </section>
+            
+            <section class="photo-section">
+                <div class="photo-box">
+                    <img src="resume photo.jpg" id="resumephoto" alt="Profile Photo">
+                </div>
+            </section>
+            
+            <section class="name-section">
+                <h1><strong>Shane Wright</strong></h1>
+                <h2><em>Virtual Receptionist</em></h2>
+            </section>
+        </header>
+
+        <!-- ========== NAVIGATION & QUALITIES SECTION ========== 
+             Contains page navigation and key professional qualities.
+             ====================================================== -->
+        <section class="nav-qualities-section">
+            <nav class="nav-box">
+                <h3>Nav</h3>
+                <button class="nav" onclick="window.location.href='CoverLetter.html'">Cover Letter</button>
+                <button class="nav-secondary" onclick="window.location.href='CareerGoals.html'">Career Goals</button>
+            </nav>
+            
+            <aside class="qualities-box">
+                <h3><em>Why Work With Me</em></h3>
+                <ul>
+                    <li>Reliable & dependable</li>
+                    <li>Quick learner</li>
+                    <li>Team player</li>
+                    <li>Excellent communication skills</li>
+                    <li>Detail-oriented</li>
+                    <li>Leadership skills</li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- ========== MAIN CONTENT SECTION ==========
+             Contains professional biography and detailed experience/skills.
+             ========================================== -->
+        <main class="main-content">
+        <section class="bio-section">
+            <h2>About Me</h2>
+            <p>I'm a dedicated Virtual Receptionist with extensive experience in customer service, communication, and professional administrative support. With deep understanding that customers are the foundation of every successful enterprise, I am committed to creating seamless, professional interactions that build trust and foster long-term relationships. My fluency in various technologies and adaptive approach allow me to learn new systems quickly and efficiently, enabling me to handle diverse responsibilities with ease and precision.</p>
+            
+            <p>Since childhood, I've been fascinated by technology and its transformative potential to improve the world. This passion evolved into a genuine love for coding and programming—disciplines that allow me to create entire digital worlds through millions of keystrokes. My drive goes far beyond simply building applications; I am deeply committed to developing consistent, cohesive, safe, and secure programs that serve real-world use cases and genuinely improve users' lives.</p>
+            
+            <p>I believe that technology, paired with thoughtful problem-solving and human-centered design, can drive meaningful change and innovation. Whether serving as a Virtual Receptionist who prioritizes customer experience or as a developer crafting secure, efficient solutions, I maintain an unwavering focus on the end user. My philosophy is grounded in the principle that the best technology is that which serves its customers with consistency, security, and purpose.</p>
+            
+            <p>I am actively pursuing my entry into the tech industry through software development, programming, and application infrastructure. With a strong foundation in web development fundamentals and a demonstrated commitment to learning new technologies, I am eager to contribute to innovative teams. My goal is to transition into a technology-focused role where I can grow as a developer and help build the infrastructure that powers modern digital solutions.</p>
+            
+            <p class="current-datetime">Current local date and time: <span id="datetime"></span></p>
+        </section>
+
+        <!-- ========== EXPERIENCE GRID LAYOUT ==========
+             Left Column: Work Experience, Education, Certifications
+             Right Column: Programming Languages, Skills
+             (Currently, no relevant work experience, education, or certifications to list, placeholders used)
+             ============================================ -->
+        <article class="main-content-grid">
+            <div class="left-column">
+                <div class="section-box">
+                    <h3><strong>My Experience</strong></h3>
+                    <p class="job-info"><em>Job Title</em><span class="separator">Company</span><span class="separator">Dates</span></p>
+                    <ul class="sub-bullets">
+                        <li>Responsibility or Achievement 1</li>
+                        <li>Responsibility or Achievement 2</li>
+                    </ul>
+                </div>
+                
+                <div class="section-box">
+                    <h3><strong>Education</strong></h3>
+                    <p>University</p>
+                    <ul class="sub-bullets">
+                        <li>Degree</li>
+                        <li>Major</li>
+                        <li>Graduation Year</li>
+                        <li>Relevant Coursework or Honors</li>
+                    </ul>
+                </div>
+                
+                <div class="section-box">
+                    <h3><strong>Certifications</strong></h3>
+                    <ul>
+                        <li>Certification Name</li>
+                        <li>Issuing Organization</li>
+                        <li>Date Obtained</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="section-box">
+                    <table>
+                        <caption><h2><em>Programming Languages and Proficiencies</em></h2></caption>
+                        <tr>
+                            <th>Language</th>
+                            <th>Proficiency</th>
+                            <th>Years of Use</th>
+                            <th>First Experience</th>
+                        </tr>
+                        <tr>
+                            <td>Javascript</td>
+                            <td class="checkmark-cell proficiency-rating">Proficiency Level</td>
+                            <td class="checkmark-cell">Years of use: 2</td>
+                            <td class="checkmark-cell">First Experience: Attempting to make my mom a website for her quilting business</td>
+                        </tr>
+                        <tr>
+                            <td>HTML</td>
+                            <td class="checkmark-cell proficiency-rating-4-5">Proficiency Level</td>
+                            <td class="checkmark-cell">Years of use: Unknown</td>
+                            <td class="checkmark-cell">First Experience: Making Myspace pages</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td class="checkmark-cell proficiency-rating-4-5">Proficiency Level</td>
+                            <td class="checkmark-cell">Years of use: Unknown</td>
+                            <td class="checkmark-cell">First Experience: Making Myspace pages</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="section-box">
+                    <h3><em>What I Can Do</em></h3>
+                    <ul class="sub-bullets">
+                        <li>Organize code structurally, provide comments, basic understanding of core HTML, CSS, and Javascript</li>
+                        <li>Basic understanding of core Java, Python, and Coral</li>
+                        <li>Rudimentary understanding of C# and C++</li>
+                        <li>Ability to work with basic programming concepts across all languages and use appropriate syntax</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        </main>
+
+        <!-- ========== CONSOLE INPUT SECTION ==========
+             Interactive console logger for a requirement of the rubric for the course.
+             =========================================== -->
+        <div class="console-input-section">
+            <input type="text" id="consoleInput" placeholder="Enter a message to log to console..." class="console-input">
+            <button onclick="logToConsole()" class="console-button">Log Message</button>
+            <p class="console-info">Check the Console tab in the Developer Tools to see your message logged!</p>
+            <script>
+                /**
+                 * Logs user input to browser console and provides feedback
+                 * Plops out a validation message
+                 */
+                function logToConsole() {
+                    const input = document.getElementById('consoleInput');
+                    const message = input.value;
+                    if (message.trim()) {
+                        console.log(message);
+                        input.value = '';
+                        alert('This is what you wrote?: ' + message);
+                    } else {
+                        alert('Silence is too strong of a message to leave. Please enter something.');
+                    }
+                }
+                
+                // Initialize page-specific functionality on DOM load
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Populate current date/time in header
+                    document.getElementById('datetime').innerHTML = new Date().toLocaleString();
+                    
+                    // Allow Enter key to trigger console logging
+                    const consoleInput = document.getElementById('consoleInput');
+                    if (consoleInput) {
+                        consoleInput.addEventListener('keypress', function(event) {
+                            if (event.key === 'Enter') {
+                                logToConsole();
+                            }
+                        });
+                    }
+                });
+            </script>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>References and Cites:</p>
+                <p>McCown, F. (2025). D 276: Web Development Foundations. Retrieved from <a href="https://learn.zybooks.com/zybook/WGUD276v3">https://learn.zybooks.com/zybook/WGUD276v3</a></p>
+                <p>Programming with Mosh. (2021). <em>HTML tutorial for beginners: HTML crash course</em> [Video]. YouTube. Retrieved from <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU">https://www.youtube.com/watch?v=qz0aGYrrlhU</a></p>
+                <p>Programming with Mosh. (2018). <em>JavaScript course for beginners – Your first step to web development</em> [Video]. YouTube. Retrieved from <a href="https://www.youtube.com/watch?v=W6NZfCO5SIk">https://www.youtube.com/watch?v=W6NZfCO5SIk</a></p>
+                <p>Tolkien, J. R. R. (2001). <em>The Fellowship of the Ring</em> "The Riddle of Strider."</p>
+                <p>Anthropic. (2025). Claude Haiku 4.5 [Large language model]. Retrieved from https://www.anthropic.com/</p>
+                <p>xAI. (2025). Grok [Large language model]. Retrieved from https://grok.x.ai/</p>
+                <p>Microsoft. (2025). Visual Studio Code IntelliSense [Software feature]. Retrieved from <a href="https://code.visualstudio.com/docs/editor/intellisense">https://code.visualstudio.com/docs/editor/intellisense</a></p>
+                <p>SUNO AI. (2025). SUNO: AI music generation [Artificial intelligence tool]. Retrieved from https://www.suno.ai/</p>
+                <p>Google DeepMind. (2025). Veo 3 [Video generation AI]. Retrieved from https://deepmind.google/technologies/veo/</p>
+                <p>Google. (2025). Gemini [Large language model]. Retrieved from https://gemini.google.com/</p>
+            </div>
+            <div class="footer-back-to-top">
+                <a href="#top">Back to top</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ========== DROPDOWN ADVERTISEMENT MODAL ==========
+         Displays promotional modal to "Hire me" after 2-second delay becasue it is a resume, duh.
+         ============================================ -->
+    <div id="adModal" class="ad-modal">
+        <div class="ad-content">
+            <button id="closeAdBtn" class="ad-close-btn">&times;</button>
+            <h2>HIRE ME!!!</h2>
+            <p>Check out my portfolio and let's work together!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
